@@ -1,0 +1,2 @@
+computed是计算属性，有缓存，书写的时候必须带有return。立即执行。
+watch没有缓存，支持异步，不是立即执行，想要立即执行的话需要设置immediate属性为true。

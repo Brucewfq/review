@@ -1,0 +1,32 @@
+react的生命周期：
+常用的生命周期有：
+constructor:数据初始化
+componentDidMount:组件渲染完成时触发
+componentDidUpdate:组件更新触发
+componentDidUnMount:组件销毁或者卸载触发
+不常用的生命周期：
+showComponentUpdate: 组件更新之前触发，如果返回true，更新渲染；如果返回false，则不渲染
+getDerivedStateFromProps:
+
+React Hooks的优缺点：
+1、函数式组件加hooks可以让代码更加简洁
+2、可以利用自定义hooks复用逻辑
+3、让函数式组件拥有了状态和生命周期
+4、利用hooks可以模拟组件的三个生命周期，分别是componentDidMount、componentDidUpdate、componentUnMount
+5、可以不用担心this指向的问题
+
+React的事件绑定原理：
+react中的event事件不是原生事件，是通过重新封装的合成事件。在React17之前，是挂载在document上的，现在是挂载在root上面。当事件发生并冒泡至root时，react会将事件内容封装交由真正的函数去执行，这样可以减少内存消耗，而且可以在组件挂载或销毁时统一订阅或移除。因为react中的事件是合成事件，所以想要阻止冒泡的话，得使用event.preventDefault。
+
+React组件之间的传值：props、context、发布订阅
+1、父子组件可以用props
+2、兄弟组件可以找到同一父级组件再利用props，跨级组件可以利用props一级一级传递或者context
+3、也可以利用发布订阅事件的原理来传值，比如redux。
+
+setState是同步还是异步？
+是同步也是异步，在react的生命周期函数和合成事件中是异步的，在原生事件和定时器中是同步的。
+
+Ref/useRef/fowardRef
+ref是react中操作组件实例或者dom元素的接口，函数式组件通过useRef创建，class组件中通过createRef创建。forwardRef是用来包裹函数式组件，用来解决高阶函数中ref丢失的问题。
+
+
