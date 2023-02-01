@@ -29,4 +29,6 @@ setState是同步还是异步？
 Ref/useRef/fowardRef
 ref是react中操作组件实例或者dom元素的接口，函数式组件通过useRef创建，class组件中通过createRef创建。forwardRef是用来包裹函数式组件，用来解决高阶函数中ref丢失的问题。
 
+React中有两种流行的方式来共享组件之间的状态逻辑: render props和高阶组件。在函数式组件中还可以使用自定义hook来解决。
+
 
