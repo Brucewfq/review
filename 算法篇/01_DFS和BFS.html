@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DFS AND BFS</title>
+</head>
+<body>
+  <div id="node_parent">
+    <div class="children1">
+      <div class="children1-1">
+        <div class="children1-1-1"></div>
+        <div class="children1-1-2"></div>
+        <div class="children1-3-3"></div>
+      </div>
+      <div class="children1-2">
+        <div class="children1-2-1"></div>
+        <div class="children1-2-2"></div>
+      </div>
+      <div class="children1-3">
+        <div class="children1-3-1"></div>
+        <div class="children1-3-2"></div>
+      </div>
+    </div>
+    <div class="children2">
+      <div class="children2-1">
+        <div class="children2-1-1"></div>
+        <div class="children2-1-2"></div>
+      </div>
+      <div class="children2-2">
+        <div class="children2-2-1"></div>
+        <div class="children2-2-2"></div>
+      </div>
+    </div>
+    <div class="children3">
+      <div class="children3-1"></div>
+      <div class="children3-2"></div>
+      <div class="children3-3"></div>
+    </div>
+  </div>
+</body>
+<script>
+  const node_parent = document.querySelector('#node_parent');
+  // 深度优先遍历
+  const dfs = (rootNode) => {
+    const stack = [];
+    const nodes = [];
+
+    if (rootNode) {
+      stack.push(rootNode);
+      while(stack.length){
+        const item = stack.pop();
+        nodes.push(item);
+        const children = item.children;
+
+        for (let i = children.length - 1; i >= 0; i--) {
+          stack.push(children[i]) // 1-2 1-1
+        }
+      }
+    }
+    //
+    return nodes;
+  }
+
+  console.log(dfs(node_parent));
+
+  // 广度优先遍历
+  const bfs = (rootNode) => {
+    const queue = [];
+    const nodes = [];
+    if (rootNode) {
+      queue.push(rootNode);
+      while(queue.length){
+        const item = queue.shift();
+        nodes.push(item);
+        const children = item.children;
+
+        for (let i = 0; i < children.length; i++) {
+          queue.push(children[i]);
+        }
+      }
+    }
+    //
+    return nodes;
+  }
+  console.log(bfs(node_parent));
+</script>
+</html>
