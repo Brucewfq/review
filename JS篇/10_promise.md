@@ -10,3 +10,4 @@ Promise:
     1、reject（只能等状态变为失败才能捕获）
     2、catch：因为catch可以捕获执行中的错误，也更接近同步的写法（try/catch）
     3、捕获不了异步错误，因为try/catch只能捕获同步错误。
+    unhandledrejection：可以捕获到promise异常，也是通过window.addEventListener('unhandledrejection', fun, true)方式。
