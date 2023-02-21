@@ -1,7 +1,3 @@
-const { type } = require("os")
-const { emit } = require("process")
-const { subscribeOn } = require("rxjs")
-
 class EventEmiter{
   constructor{
     this.subs = []

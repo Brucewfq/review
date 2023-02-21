@@ -12,7 +12,9 @@ function getPrime(arrList) {
   for (let i = 0; i < arrList.length; i++) {
     const num = arrList[i];
     let bool = false;
-    for (let j = 2; j < num; j++) {
+    // 循环次数可以改成num的开平方根的值，从而可以减少循环次数
+    const sq = Math.sqrt(num);
+    for (let j = 2; j <= sq; j++) {
       if (num % j === 0) {
         bool = true;
         break;

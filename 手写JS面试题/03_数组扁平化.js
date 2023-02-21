@@ -27,7 +27,7 @@ function flatter1(arr) {
   }
 
   while(arr.some(item => Array.isArray(item))){
-    arr = [].concat[...arr]
+    arr = [].concat(...arr)
   }
   return arr
 }
